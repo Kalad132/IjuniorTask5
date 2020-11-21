@@ -40,11 +40,13 @@ public class Alarm : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        _targetVolume = 1f;
+        if (collision.tag == "Thief")
+            _targetVolume = 1f;
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
-        _targetVolume = 0f;
+        if (collision.tag == "Thief")
+            _targetVolume = 0f;
     }
 
 }
