@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Alarm : MonoBehaviour
 {
+    [SerializeField] private SpriteRenderer _thief;
     private AudioSource _alarm;
     private float _volumeChangeSpeed = 1f;
     private float _targetVolume;
@@ -26,26 +27,19 @@ public class Alarm : MonoBehaviour
                 volumeChange *= -1;
             }
             float targetVolume = _alarm.volume + volumeChange;
-            if (targetVolume < 0)
-            {
-                targetVolume = 0f;
-            }
-            else if (targetVolume > 1)
-            {
-                targetVolume = 1f;
-            }
-            _alarm.volume = targetVolume;
+            _alarm.volume = Mathf.Clamp(targetVolume,0f,1f);
         }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Thief")
+        if (collision.GetComponent<SpriteRenderer>() == _thief)
             _targetVolume = 1f;
     }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.tag == "Thief")
+        if (collision.GetComponent<SpriteRenderer>() == _thief)
             _targetVolume = 0f;
     }
 
