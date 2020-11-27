@@ -204,12 +204,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &831567649 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 423277219781784893, guid: c66c902d7dde2c249a81e01e5cdd1725,
-    type: 3}
-  m_PrefabInstance: {fileID: 423277220594385436}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1021286263
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +236,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3c85bb29401f5a34d97feecf82f812c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _thief: {fileID: 831567649}
+  _thief: {fileID: 1046628044}
 --- !u!61 &1021286265
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -429,6 +423,12 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &1046628044 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 423277219781784835, guid: c66c902d7dde2c249a81e01e5cdd1725,
+    type: 3}
+  m_PrefabInstance: {fileID: 423277220594385436}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &423277220594385436
 PrefabInstance:
   m_ObjectHideFlags: 0
