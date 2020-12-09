@@ -5,7 +5,6 @@ using UnityEngine;
 [RequireComponent(typeof(AudioSource))]
 public class Alarm : MonoBehaviour
 {
-    [SerializeField] private GameObject _thief;
     private AudioSource _alarm;
     private float _volumeChangeSpeed = 1f;
     private float _targetVolume;
@@ -33,13 +32,13 @@ public class Alarm : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == _thief)
+        if (collision.TryGetComponent<Thief>(out Thief thief))
             _targetVolume = 1f;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject == _thief)
+        if (collision.TryGetComponent<Thief>(out Thief thief))
             _targetVolume = 0f;
     }
 

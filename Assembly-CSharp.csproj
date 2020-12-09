@@ -65,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Alarm.cs" />
+    <Compile Include="Assets\Thief.cs" />
     <Reference Include="UnityEngine">
       <HintPath>E:/Unity/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
