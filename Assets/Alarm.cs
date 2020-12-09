@@ -33,13 +33,13 @@ public class Alarm : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision == _thief.GetComponent<Collider2D>())
+        if (collision.gameObject == _thief)
             _targetVolume = 1f;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision == _thief.GetComponent<Collider2D>())
+        if (collision.gameObject == _thief)
             _targetVolume = 0f;
     }
 
